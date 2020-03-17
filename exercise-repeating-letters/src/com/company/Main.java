@@ -59,16 +59,23 @@ public class Main {
         // START FASE 3
 
         Map<Integer, Character> myNewMap  = new LinkedHashMap();
+        int counterRepeated = 0;
 
-        myNewMap.put(2,'A');
-        myNewMap.put(1,'L');
-        myNewMap.put(2,'E');
-        myNewMap.put(1,'X');
-        myNewMap.put(2,'A');
-        myNewMap.put(1,'N');
-        myNewMap.put(1,'D');
-        myNewMap.put(1,'R');
-        myNewMap.put(2,'E');
+        for(Character e: NameList){
+            for(Character i: NameList){
+                if(e.equals(i)){
+                    counterRepeated++;
+                }
+            }
+            if(counterRepeated > 2){
+                System.out.println(e + " = " + counterRepeated + " ");
+                myNewMap.put(counterRepeated, e);
+            } else {
+                System.out.println(e + " = " + counterRepeated + " ");
+                myNewMap.put(counterRepeated, e);
+            }
+            counterRepeated = 0;
+        }
 
         // END FASE 3
 
